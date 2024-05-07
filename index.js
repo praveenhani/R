@@ -4,10 +4,12 @@ const path = require("path");
 const sqlite3 = require("sqlite3");
 const axios = require("axios");
 const { get } = require("http");
+const cors = require("cors");
 
 const dbPath = path.join(__dirname, 'transaction.db');
 const app = express()
 app.use(express.json())
+app.use(cors());
 
 let db = null;
 
